@@ -6,7 +6,7 @@ let b = '';
 let sign = '';
 let finish = false;
 percentCheck = false;
-result = '';
+calculateResult = '';
 currentInput = '';
 
 
@@ -66,7 +66,7 @@ document.querySelector('.buttons').onclick = function (event) {
     // Если нажата клавиша + - * /
     if (action.includes(key)) {
         if (finish) {
-            a = String(result);
+            a = String(calculateResult);
             finish = false;
         }
         sign = key;
@@ -80,26 +80,26 @@ document.querySelector('.buttons').onclick = function (event) {
         if(b === '') b = a;
         switch (sign) {
             case "+":
-                result = (+a) + (+b);
-                out.textContent = result;
+                calculateResult = (+a) + (+b);
+                out.textContent = calculateResult;
                 break
             case "-":
-                result = (+a) - (+b)
-                out.textContent = result
+                calculateResult = (+a) - (+b)
+                out.textContent = calculateResult
                 break
             case "X":
                 if (percentCheck) {
-                    result = (+a) * (+b/100);
+                    calculateResult = (+a) * (+b/100);
                     percentCheck = false;
                 }
                 else {
-                    result = (+a) * (+b);
+                    calculateResult = (+a) * (+b);
                 }
-                out.textContent = result;
+                out.textContent = calculateResult;
                 break;
             case "/":
-                result = (+a) / (+b);
-                out.textContent = result;
+                calculateResult = (+a) / (+b);
+                out.textContent = calculateResult;
                 break;
         }
         finish = true;
@@ -111,7 +111,7 @@ document.querySelector('.buttons').onclick = function (event) {
     // Если нажата клавиша +/-
     if(key === '+/-') {
         if (finish) {
-            a = String(-result);
+            a = String(-calculateResult);
             finish = false;
             out.textContent = a;
         }
@@ -129,7 +129,7 @@ document.querySelector('.buttons').onclick = function (event) {
     // Если нажата клавиша 1/x. Если на экране набран x то выводит 1/x
     if (key === '1/x') {
         if (finish) {
-            a = String(1/result)
+            a = String(1/calculateResult)
             finish = false;
             out.textContent = a;
         }
