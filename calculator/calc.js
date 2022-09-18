@@ -1,5 +1,5 @@
 // Пытался импортировать для квадратного корня но через браузер не сработало.
-import "math";
+//import "math";
 
 let a = '';
 let b = '';
@@ -152,16 +152,16 @@ document.querySelector('.buttons').onclick = function (event) {
     }
 
     // Если нажата клавиша квадратного корня.(Не работает. Модуль math не хочет импортироваться)
-    if (key === '√') {
-        if (currentInput === 'a' || currentInput === 'key') {
-            a = math.pow(a, 1/2);
-            out.textContent = a;
-        }
-        else if (currentInput === 'b') {
-            b = math.pow(b, 1/2);
-            out.textContent = b;
-        }
-    }
+//     if (key === '√') {
+//         if (currentInput === 'a' || currentInput === 'key') {
+//             a = math.pow(a, 1/2);
+//             out.textContent = a;
+//         }
+//         else if (currentInput === 'b') {
+//             b = math.pow(b, 1/2);
+//             out.textContent = b;
+//         }
+//     }
 
     // Если нажата клавиша Cancel. Постепенно стирает все элементы по символу.
     if (key === 'CNL') {
